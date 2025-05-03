@@ -3,7 +3,7 @@
 // not actual value
 
 // Each varialbes get it's own unique address 
-// Firstly: If you reload then address wil change 
+// Firstly: If you reopen memory tab then address wil change 
 // For example
 const firstName = "Akash" // Address: @28651
 // In case of number it doesn't show address directly

@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="index.js"></script>
+    <!-- till it reaches here it will move to script.js and execute code 
+     basically html to script then js then html below 
+     first js then html code
+     so to prevent this use defer keyword:
+
+     This will call js but won't execute untill all the html code is executed then js  
+     so if you debug now first it will render all html then will execute js code
+
+     Instead of this some people just write script.js after </body> so all HTML will
+      execute then js will execute 
+    -->
+    <script src="index.js" defer></script>
     </head>
     <body>
-    Firstly memory will create and value will be set to undefined 
-    then value will be assigned to that memory
-     <!--const a = 
-     for a memory will create and value will be assigned undefined 
+        How js execute the code ? 
 
+    1. Memory Creation Phase(MCP): It will scan whole page and  
+     memory will create for each value, it  will be set to undefined 
+     also type will be defined offcourse: undefined 
+
+    2. Code Execution Phase(CEP): Now if you want to execute then value will
+     be assigned to that memory also type will be assigned 
+     <!--
+    For example 👇
+    For this code:  const a = "Tausif"
+
+    1. Create memory 
+     const var1; 
+     for var1 memory will create and value will be assigned undefined
+     btw in const/let you have to write value 
+     you can't be like: const var1 = ; (It will give error) 
+
+     2. Exectue the code
      const a = "Tausif"
-     
+     now in var1 value("Tausif") will be assinged
      -->
 </body>
 </html>

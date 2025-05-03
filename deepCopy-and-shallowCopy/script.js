@@ -58,9 +58,50 @@ h.class = "2nd"
 // added new key and user1 won't affected
 console.log("User2 :",user2);
 
-// // create a new array(works for both object and array)
-// const fruity = []
-// Array
+
+// This assign is old method 
+// we got new method called spread operator: as the name suggest 
+// spread the source object then add it {} then in newly object 
+// add/remove/update whatever you want cause it will have diff address 
+// so no affect on sourece object 
+const user3 = {...user1, name:"Kingy" ,class: "2nd"}
+
+
+// For copying array use same as object.assing() and spread
+
+// Object.assign(): Will work on array cause array are just object
+// Create empty array
+const arr1 = []
+Object.assign(arr1, fruits)
+// Now all data in  arr1 all the fruits 
+// now you can do operatorion arr1 that won't affect on fruits array
+
+// by spred operator
+
+const arr2 = [...fruits, "Logoto"]
+
+// this object.assign() and spred operator methods 
+// copying called shallow copy
+
+// But shallow copy objects have problem 
+// they won't work if there are nested object/array
+
+// Why cause nested1 will have diff address
+// but CS will have same address if you try to copy 
+// cause when you use both(assign and sperad) the 
+// new object created only for flatten values(name, age)
+
+const nested1 = {
+    name: "Tausif",
+    age: 45,
+    sub: ["CS", "Chemistry"]
+}
+// convert them in string now due to it's a primtive type
+// so it won't have won't have any address(basically one one address of jsonString)
+const  jsonString = JSON.stringify(nested1)  
+
+// convert back to object and new address will create jsonObject
+const  jsonObject = JSON.parse(jsonString)  
 
 
 // Reference types: Cause they are compare on the basis of address

@@ -52,21 +52,24 @@ john.greet(); // Hello, my name is John
 
 // NOW let's go in deep of OOP
 // Firstly let's talk about Objects 
-// There are six ways to create objects 
-// 1. Using object Literal: defining object in { }
+
+// THERE ARE SIZ WAYS TO CREATE OBJECTS 
+
+// 1. USING OBJECT LITERAL: defining object in { }
 const user = {
     firstName: "Tausif",
     lastName: "Raza",
     age: 47,
 }
 
-// using  new Object constructor ? 
-// What is constrcutor(Object() is constructor function) ?
-//  A special function in object that creates an object 
-// it returns soemthing called this 
+// 3. USING NEW OBJECT CONSTRCUTOR ? 
+
+// What is constrcutor ?
+//  A special function that creates an object 
+// and automatically returns that object
 // start with capital case BTW Object() is built in constructor 
 
-// Now what is new ? It needed with constcutor function 
+// Now what is new ? It is needed to create constcutor function  
 // WHY ? It creates an emtpy object { } learn more in custom constructor function: Person() 
 
 // Fun fact: You don't need to use new keywrod with built in constructor such Object() 
@@ -85,52 +88,17 @@ console.log(person.name);
 // Here is creating object using custom constructor function
 
 // What does new keyword do ? 
-// creates empty object: { }
-// then store the object in this keyword: this = { }
-// Now you know how to add object ? this.name = "tausif"
-// and keys and values stores in object
+// creates empty object: { } NOT THE CONSTRUCTOR FUNCTION(CAUSE funciton is pice that we 
+// have to call it for using but if we use it with new keyword then it will create object )
 
 
-// Why do we need to store the object in `this`? this = {}
-// => Because `new Person()` creates a new empty object.
-// => To add values to that object from inside the function,
-//    JavaScript stores the object in `this`. keyword 
-// => So when we write `this.name = "Tausif"`, 
-//    we're actually adding a property to that object.
-
-// Jaise hum normal object me add karte hai kaise ?
-// store it in a variable const user = { }
-// then: user.name = "Tausif" 
-// here user is this 
-
-// What is this ? this keyword refers 
-// 1.to scope of that object 
-
-// for example if it's written in object greet key so it will 
-// refer to it's scope of object which is user1
-
-// BTW refer means show/talk 
-
-const user1 = {
-    name: "Tausif", 
-    greet:  function (){
-    // this function inside greet so it 
-    // will refer to hell() function
-       console.log(this);
-    }
-}
-
-// 2. In scope of global object: here we have no object so 
-// it will refer to object but empty object  
-// console.log(this);
-
-// 3. This keyword refers object that is created by constructor function 
+// 3. USING CUSTOM CONSTRUCTOR FUNCTION  
 
 
-// in our 3rd case 
+function Person2(name, age) {
 
-function Person(name, age) {
-// so this is refer that object created by Person()
+// so this KEYWORD WILL REFER TO THAT  OBJECT  created by Person2()
+// why ?for more see this.js file 
 // like this: this = {}
 
 // now for adding in that object add as ususal   
@@ -139,8 +107,20 @@ function Person(name, age) {
 
 }
 
- new Person("Ravi", 22); // step-by-step above
-// const person1 = new Person("Ravi", 22); // step-by-step above
+ new Person2("Ravi", 22); // step-by-step above
 
 
-// For using ooops we uses something called classes: they are use for creating objects
+
+// 3. CREATING OBJECT USING CLASS(MODERN WAY IN OOP)
+// in 2015 class syntax were introduced to create it 
+
+
+class Person3 {
+    constructor(name,age) {
+        this.name = name
+        this.age = age
+    }
+}
+
+const he = new Person3("Tausif",48)
+console.log("he :", he);
